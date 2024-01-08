@@ -4,6 +4,14 @@
 <head>
   <title>Effets Sécondaires Indésirables</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    /* Add the following CSS to set a fixed width for images */
+    img {
+      width: 100%;
+      max-width: 800px; /* Set your preferred maximum width */
+      height: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +30,7 @@
         <div id="sexplot">
           <h2>Incidents par catégorie et sexe</h2>
           <!-- Add the following line to display the image -->
-          <img src="sexplot.png" alt="Sex Plot Image" style="width: 100%; max-height: 600px;">
+          <img src="sexplot.png" alt="Sex Plot Image">
           <!-- End of added line -->
           <div class="row">
             <div class="col-md-3">
@@ -58,7 +66,7 @@
         <div id="age_dist_plot">
           <h2>Age Scatter Plot avec la Moyenne</h2>
           <!-- Add the following line to display the image dynamically -->
-          <img id="age_plot_image" src="parmoyenne.png" alt="Age Plot Image" style="width: 100%; max-height: 600px;">
+          <img id="age_plot_image" src="parmoyenne.png" alt="Age Plot Image">
           <!-- End of added line -->
           <div class="form-group">
             <label for="age_selector">Select a Category:</label>
