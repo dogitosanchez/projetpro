@@ -124,4 +124,18 @@
 
     // JavaScript function to change the gravity plot image based on the selected option
     function changeGravityPlot() {
-      var selectedOption = document.getElementById
+      var selectedOption = document.getElementById("gravity_selector").value;
+      var imageElement = document.getElementById("gravity_plot_image");
+      imageElement.src = selectedOption + ".png";
+    }
+
+    // Set default images on page load
+    window.onload = function () {
+      changeAgePlot();
+      changeDistPlot();
+      changeGravityPlot();
+    };
+  </script>
+</body>
+
+</html>
