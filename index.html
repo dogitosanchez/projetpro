@@ -8,7 +8,7 @@
     /* Add the following CSS to set a fixed width for images */
     img {
       width: 100%;
-      max-width: 800px; /* Set your preferred maximum width */
+      max-width: 500px; /* Set your preferred fixed width in pixels */
       height: auto;
     }
   </style>
@@ -92,12 +92,14 @@
         </div>
         <div id="gravity_plots">
           <h2>Percentage of Gravity Plots</h2>
-          <div id="grave" style="height: 600px;"></div>
+          <!-- Add the following line to display the image dynamically -->
+          <img id="gravity_plot_image" src="parage.png" alt="Gravity Plot Image">
+          <!-- End of added line -->
           <div class="form-group">
             <label for="gravity_selector">Select a Category:</label>
-            <select class="form-control" id="gravity_selector">
-              <option>Age</option>
-              <option>Sex</option>
+            <select class="form-control" id="gravity_selector" onchange="changeGravityPlot()">
+              <option value="parage">Age</option>
+              <option value="parsexe">Sex</option>
             </select>
           </div>
         </div>
@@ -120,10 +122,18 @@
       imageElement.src = selectedOption + ".png";
     }
 
+    // JavaScript function to change the gravity plot image based on the selected option
+    function changeGravityPlot() {
+      var selectedOption = document.getElementById("gravity_selector").value;
+      var imageElement = document.getElementById("gravity_plot_image");
+      imageElement.src = selectedOption + ".png";
+    }
+
     // Set default images on page load
     window.onload = function () {
       changeAgePlot();
       changeDistPlot();
+      changeGravityPlot();
     };
   </script>
 </body>
