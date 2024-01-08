@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Effets Sécondaires Indésirables</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
+
 <body>
   <div class="container-fluid">
     <div class="row">
@@ -19,7 +21,9 @@
         <h1>Effets Sécondaires Indésirables</h1>
         <div id="sexplot">
           <h2>Incidents par catégorie et sexe</h2>
-          <div id="sexplot" style="height: 600px;"></div>
+          <!-- Add the following line to display the image -->
+          <img src="sexplot.png" alt="Sex Plot Image" style="width: 100%; max-height: 600px;">
+          <!-- End of added line -->
           <div class="row">
             <div class="col-md-3">
               <div class="card">
@@ -53,12 +57,14 @@
         </div>
         <div id="age_dist_plot">
           <h2>Age Scatter Plot avec la Moyenne</h2>
-          <div id="ageplot" style="height: 600px;"></div>
+          <!-- Add the following line to display the image dynamically -->
+          <img id="age_plot_image" src="parmoyenne.png" alt="Age Plot Image" style="width: 100%; max-height: 600px;">
+          <!-- End of added line -->
           <div class="form-group">
             <label for="age_selector">Select a Category:</label>
-            <select class="form-control" id="age_selector">
-              <option>Par Moyenne</option>
-              <option>Par Sexe</option>
+            <select class="form-control" id="age_selector" onchange="changeAgePlot()">
+              <option value="parmoyenne">Par Moyenne</option>
+              <option value="parsexe">Par Sexe</option>
             </select>
           </div>
         </div>
@@ -88,5 +94,20 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // JavaScript function to change the age plot image based on the selected option
+    function changeAgePlot() {
+      var selectedOption = document.getElementById("age_selector").value;
+      var imageElement = document.getElementById("age_plot_image");
+      imageElement.src = selectedOption + ".png";
+    }
+
+    // Set default image (parmoyenne.png) on page load
+    window.onload = function () {
+      changeAgePlot();
+    };
+  </script>
 </body>
+
 </html>
