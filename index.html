@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Effets Sécondaires Indésirables</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="list-group">
+          <a href="#sexplot" class="list-group-item list-group-item-action">Incidents par catégorie et sexe</a>
+          <a href="#age_dist_plot" class="list-group-item list-group-item-action">Age Scatter Plot avec la Moyenne</a>
+          <a href="#dist_plots" class="list-group-item list-group-item-action">Distribution Plots</a>
+          <a href="#gravity_plots" class="list-group-item list-group-item-action">Percentage of Gravity Plots</a>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <h1>Effets Sécondaires Indésirables</h1>
+        <div id="sexplot">
+          <h2>Incidents par catégorie et sexe</h2>
+          <div id="sexplot" style="height: 600px;"></div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">L'âge moyen suggère que la personne typique dans cet ensemble de données a environ 63,17 ans.</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">L'écart type représente la dispersion ou la répartition des âges dans l'ensemble de données.</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Un écart type plus élevé signifie que les âges sont plus dispersés, indiquant une plage d'âge plus large dans l'ensemble de données.</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Dans ce cas, l'âge moyen est quelque peu plus élevé par rapport à l'âge moyen dans une population générale, et la plage d'âge dans cet ensemble de données est plus large que la moyenne.</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="age_dist_plot">
+          <h2>Age Scatter Plot avec la Moyenne</h2>
+          <div id="ageplot" style="height: 600px;"></div>
+          <div class="form-group">
+            <label for="age_selector">Select a Category:</label>
+            <select class="form-control" id="age_selector">
+              <option>Par Moyenne</option>
+              <option>Par Sexe</option>
+            </select>
+          </div>
+        </div>
+        <div id="dist_plots">
+          <h2>Distribution Plots</h2>
+          <div id="pie" style="height: 600px;"></div>
+          <div class="form-group">
+            <label for="category_selector">Select a Category:</label>
+            <select class="form-control" id="category_selector">
+              <option>Cas</option>
+              <option>Déclaration</option>
+              <option>Notification</option>
+            </select>
+          </div>
+        </div>
+        <div id="gravity_plots">
+          <h2>Percentage of Gravity Plots</h2>
+          <div id="grave" style="height: 600px;"></div>
+          <div class="form-group">
+            <label for="gravity_selector">Select a Category:</label>
+            <select class="form-control" id="gravity_selector">
+              <option>Age</option>
+              <option>Sex</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
