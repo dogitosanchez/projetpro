@@ -78,13 +78,15 @@
         </div>
         <div id="dist_plots">
           <h2>Distribution Plots</h2>
-          <div id="pie" style="height: 600px;"></div>
+          <!-- Add the following line to display the image dynamically -->
+          <img id="dist_plot_image" src="cas.png" alt="Distribution Plot Image">
+          <!-- End of added line -->
           <div class="form-group">
             <label for="category_selector">Select a Category:</label>
-            <select class="form-control" id="category_selector">
-              <option>Cas</option>
-              <option>Déclaration</option>
-              <option>Notification</option>
+            <select class="form-control" id="category_selector" onchange="changeDistPlot()">
+              <option value="cas">Cas</option>
+              <option value="declaration">Déclaration</option>
+              <option value="notif">Notification</option>
             </select>
           </div>
         </div>
@@ -111,9 +113,17 @@
       imageElement.src = selectedOption + ".png";
     }
 
-    // Set default image (parmoyenne.png) on page load
+    // JavaScript function to change the distribution plot image based on the selected option
+    function changeDistPlot() {
+      var selectedOption = document.getElementById("category_selector").value;
+      var imageElement = document.getElementById("dist_plot_image");
+      imageElement.src = selectedOption + ".png";
+    }
+
+    // Set default images on page load
     window.onload = function () {
       changeAgePlot();
+      changeDistPlot();
     };
   </script>
 </body>
